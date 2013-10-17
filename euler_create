@@ -6,8 +6,6 @@ function error() {
 	exit
 }
 
-[ -d $1 ] && error "$0: Directory exists already - $1"
-
 mkdir -p $1
 
 [ ! -d $1 ] && error "$0: Error opening directory - $1"

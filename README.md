@@ -1,4 +1,4 @@
-euler
+Euler
 =====
 
 This repo is to collect my programs solving the problems in Project Euler Website. I'll probably include programs written for other questions and/or competitions and/or online coding portals. But so far, my focus is mainly on Euler.
