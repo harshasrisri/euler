@@ -1,0 +1,20 @@
+#!/bin/bash
+## script to create a problem directory and a readme file by scraping the project euler website
+
+function error() {
+	echo $1 >&2
+	exit
+}
+
+[ $(mkdir -p $1) ] && error "$0: Error creating directory - $1"
+
+cd $1
+
+cat > README.md << __EOF__
+Problem $1
+=======
+
+Link : [Problem $1](http://projecteuler.net/problem=$1 "Problem $1")
+__EOF__
+
+wget -q http://projecteuler.net/problem=$1 -O - | sed -n "/problem_content/,/<\/div>/p" | sed  "s/<[^>]\+>/ /g" >> README.md
