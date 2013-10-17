@@ -6,7 +6,9 @@ function error() {
 	exit
 }
 
-[ $(mkdir -p $1) ] && error "$0: Error creating directory - $1"
+mkdir -p $1
+
+[ ! -d $1 ] && error "$0: Error opening directory - $1"
 
 cd $1
 
