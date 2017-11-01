@@ -19,4 +19,4 @@ Problem $1
 Link : [Problem $1](http://projecteuler.net/problem=$1 "Problem $1")
 __EOF__
 
-wget -q http://projecteuler.net/problem=$1 -O - | sed -n "/problem_content/,/<\/div>/p" | sed  "s/<[^>]\+>/ /g" >> README.md
+wget -q http://projecteuler.net/problem=$1 -O - | sed -n "/problem_content/,/<\/p><\/div>/p" |sed  '/copyright/d'  |sed  "s/<[^>]\+>/ /g" >> README.md
